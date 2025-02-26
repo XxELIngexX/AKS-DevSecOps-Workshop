@@ -57,9 +57,13 @@ resource aks 'Microsoft.ContainerService/managedClusters@2024-09-01' = {
       managed: true
       enableAzureRBAC: true
     }   
-    workloadIdentityProfile: {
+    oidcIssuerProfile: {  // 🔹 Habilita el OIDC Issuer necesario para Workload Identity
       enabled: true
-    } 
+    }
+    securityProfile: {  // 🔹 Activa Workload Identity usando podIdentityProfile
+      podIdentity: {
+        enabled: true
+      } 
   }
 }
 
