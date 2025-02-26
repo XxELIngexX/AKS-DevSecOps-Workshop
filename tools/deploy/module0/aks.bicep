@@ -56,7 +56,10 @@ resource aks 'Microsoft.ContainerService/managedClusters@2024-09-01' = {
     aadProfile: {
       managed: true
       enableAzureRBAC: true
-    }    
+    }   
+    workloadIdentityProfile: {
+      enabled: true
+    } 
   }
 }
 
