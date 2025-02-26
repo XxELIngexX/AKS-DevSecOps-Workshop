@@ -60,8 +60,8 @@ resource aks 'Microsoft.ContainerService/managedClusters@2024-09-01' = {
     oidcIssuerProfile: {  // 🔹 Habilita el OIDC Issuer necesario para Workload Identity
       enabled: true
     }
-    securityProfile: {  // 🔹 Activa Workload Identity usando podIdentityProfile
-      podIdentity: {
+    securityProfile: {  // 🔹 Activa Workload Identity usando workloadIdentity
+      workloadIdentity: {
         enabled: true
       }
     } 
