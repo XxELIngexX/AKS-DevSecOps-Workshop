@@ -121,7 +121,7 @@ az group create --name $resourceGroupName --location $location
 
    ```bash
    az deployment group create --template-file tools/deploy/module0/aks.bicep --resource-group $resourceGroupName --parameters location=$location
-   az feature register --namespace "Microsoft.ContainerService" --name "EnableWorkloadIdentityPreview"
+   az feature register --namespace "Microsoft.ContainerService" --name "loadIdentityPreview"
    CLUSTER_NAME=$(az aks list --resource-group $resourceGroupName --query "[].name" -o tsv)
    ACR_NAME=$(az acr list --resource-group $resourceGroupName --query "[].name" -o tsv)
    az aks update -n $CLUSTER_NAME -g $resourceGroupName --attach-acr $ACR_NAME
