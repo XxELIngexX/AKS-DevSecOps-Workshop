@@ -63,7 +63,8 @@ resource aks 'Microsoft.ContainerService/managedClusters@2024-09-01' = {
     securityProfile: {  // 🔹 Activa Workload Identity usando podIdentityProfile
       podIdentity: {
         enabled: true
-      } 
+      }
+    } 
   }
 }
 
